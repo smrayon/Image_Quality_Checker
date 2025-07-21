@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Quality Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="outer-box">
+    <div class="container py-5">
+      <h2 class="mb-4 text-center">Photo Quality Checker</h2>
+
+      <div class="mb-3">
+        <label for="imageInput" class="form-label">Upload a photo</label>
+        <input class="form-control" type="file" id="imageInput" accept="image/*">
+      </div>
+
+      <div class="text-center">
+        <img id="preview" class="img-fluid rounded shadow-sm" style="display:none; max-height: 300px;" />
+      </div>
+
+      <div id="feedback" class="alert alert-info mt-4 text-center" style="display:none;"></div>
+    </div>
+  </div>
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const preview = document.getElementById('preview');
+    const feedback = document.getElementById('feedback');
+
+    imageInput.addEventListener('change', async function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+
+      feedback.style.display = 'block';
+      feedback.className = 'alert alert-info mt-4 text-center';
+      feedback.textContent = 'Analyzing image...';
+
+      const formData = new FormData();
+      formData.append('media', file);
+      formData.append('model', 'quality');
+      formData.append('api_user','519069867');
+      formData.append('api_secret', 'HH29Zb2Qm3jGdRvpMG6gkt4txu8iCfNwH'); 
+
+      try {
+        const response = await fetch("https://api.sightengine.com/1.0/check.json", {
+          method: "POST",
+          body: formData
+        });
+
+        let result;
+        if (response.ok) {
+          try {
+            result = await response.json();
+          } catch (jsonError) {
+            feedback.className = 'alert alert-danger mt-4';
+            feedback.textContent = "Error: Response was not valid JSON.";
+            return;
+          }
+        } else {
+          // Try to get error message from HTML or status
+          const text = await response.text();
+          feedback.className = 'alert alert-danger mt-4';
+          feedback.textContent = `HTTP Error ${response.status}: ${response.statusText}`;
+          console.error('API error response:', text);
+          return;
+        }
+
+        if (result.status === 'success') {
+          const sharpness = result.sharpness;
+          const exposure = result.exposure;
+          const lightDistortion = result.light_distortion;
+
+          let issues = [];
+          if (sharpness < 0.5) issues.push("This image appears blurry. Please retake.");
+          if (exposure < 0.5) issues.push("This image appears too dark. Please retake.");
+          if (lightDistortion > 0.5) issues.push("This image has glare. Please retake.");
+
+          if (issues.length > 0) {
+            feedback.className = 'alert alert-warning mt-4 text-center';
+            feedback.textContent = "Issues detected: " + issues.join(", ") + " Please retake.";
+          } else {
+            feedback.className = 'alert alert-success mt-4 text-center';
+            feedback.textContent = "This image looks good!";
+          }
+        } else {
+          feedback.className = 'alert alert-danger mt-4';
+          feedback.textContent = "Error: " + (result.error && result.error.message ? result.error.message : 'Unknown error');
+        }
+      } catch (error) {
+        feedback.className = 'alert alert-danger mt-4 text-center';
+        feedback.textContent = "Error analyzing image.";
+        console.error(error);
+      }
+    });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6DQD021o6FfQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></script>
+</body>
+</html>
