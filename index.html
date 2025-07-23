@@ -73,13 +73,13 @@
 
         if (result.status === 'success') {
           const sharpness = result.sharpness;
-          const exposure = result.exposure;
-          const lightDistortion = result.light_distortion;
+          const brightness = result.brightness;
+          const contrast = result.contrast;
 
           let issues = [];
           if (sharpness < 0.80) issues.push("This image appears blurry.");
-          if (exposure < 0.85) issues.push("This image appears overexposed.");
-          if (lightDistortion > 0.4) issues.push("This image has glare.");
+          if (brightness < 0.4) issues.push("This image appears too dark.");
+          if (contrast < 0.4) issues.push("This image is too low contrast.");
 
           if (issues.length > 0) {
             feedback.className = 'alert alert-warning mt-4 text-center';
