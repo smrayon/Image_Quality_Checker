@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Image_Quality_Checker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8862dc786aca908a8b63fc812076c307e8ddbef7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e21af1fdcd47cbd8fde98bd51d67f4de8a19c6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Image_Quality_Checker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Image_Quality_Checker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

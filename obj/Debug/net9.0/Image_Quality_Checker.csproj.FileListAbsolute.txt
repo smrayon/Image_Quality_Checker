@@ -1,0 +1,15 @@
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.AssemblyInfoInputs.cache
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.AssemblyInfo.cs
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.csproj.CoreCompileInputs.cache
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.sourcelink.json
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\bin\Debug\net9.0\Image_Quality_Checker.exe
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\bin\Debug\net9.0\Image_Quality_Checker.deps.json
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\bin\Debug\net9.0\Image_Quality_Checker.runtimeconfig.json
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\bin\Debug\net9.0\Image_Quality_Checker.dll
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\bin\Debug\net9.0\Image_Quality_Checker.pdb
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.dll
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\refint\Image_Quality_Checker.dll
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.pdb
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\Image_Quality_Checker.genruntimeconfig.cache
+C:\Users\sofrayo\Downloads\projects\Image_Quality_Checker\obj\Debug\net9.0\ref\Image_Quality_Checker.dll
