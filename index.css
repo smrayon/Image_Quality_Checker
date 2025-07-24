@@ -1,5 +1,5 @@
 body {
-  background-color: #f1f1f1;
+  background-color: #525252;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   color: #333;
   text-align: center;
@@ -10,18 +10,20 @@ body {
 h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #c90107;
+  color: #000000;
   margin-bottom: 2rem;
   border-bottom: 2px solid #c90107;
   display: inline-block;
   padding-bottom: 0.5rem;
 }
 
+
+/*inner container*/
 .container {
   max-width: 600px;
   margin: auto;
   padding: 2rem;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
@@ -29,10 +31,10 @@ h2 {
 .outer-box {
   max-width: 700px;
   margin: 40px auto;
-  padding: 24px;
+  padding: 30px;
   border: 3px solid #c90107;
   border-radius: 16px;
-  background: #fff;
+  background: #cccbcb;
   box-shadow: 0 0 24px rgba(0,0,0,0.05);
   min-height: 100vh;
 }
